@@ -1,0 +1,100 @@
+--테이블 만들기 
+create   table  member2(
+   id varchar(20)	
+  , pw  varchar(20)  
+  , name  varchar(30)
+) default  character  set  utf8;
+
+1.쿼리문이란? (SQL 문이라고 함) 
+  SQL =Structured Query Language (구조화된 질의어)
+  쉬운 이해법 )  DB 제품이 알아듣는 언어 
+		     DB에서만 사용가능한 언어
+
+2.목적에 따라 크게 3가지로 분류됨 		     
+DDL, DML, DCL 
+
+(1)DDL(Database Definition Language) 데이터베이스 정의어
+    생성, 제거, 변경 등의 작업에 사용되는 쿼리문 
+    Create ( 객체를 생성하는 명령어 ) 
+    Drop  ( 객체를 제거하는 명령어 ) 
+    Alter  ( 객체의 정의를 변경하는 명령어 ) 
+
+(2)DML(Data Manipulation Language) 데이터 조작어 
+    데이터를 넣거나, 수정하거나 삭제하는 명령어  
+    insert  ,  update   , delete 
+
+(3) DCL ( Database Control Language ) 데이터 제어어
+     주고 권한을 부여하거나, 뺏을때 사용 
+     * 사실 상 개발자가 거의 사용할일 없으며, DB Administator 에의해
+       사용됨...
+
+결론) 개발자가 주로 사용하게 되는 쿼리문 DDL, DML 
+
+테이블에 데이터를 입력받다 보면 데이터가 누락되거나, 중복되거나
+엉망진창이 되는 경우가 많다...이러한 상황은 개발자나 DBA가 
+데이터를 입력받을때 무결성 제약조건을 부여하지 못했기 때문에
+발생한다...따라서 앞으로 테이블을 만들때 데이터의 유효성을 확보
+하고 제대된 된 데이터를 (무결성) 입력받으려면 , 
+입력데이터에 대한 조건을  따져봐야 한다...
+이럴때 사용하는 제약 기술을 가리켜 제약조건이라 하는데 총 5가지가
+있다..
+ - 제약 constraint  =  제한을 가한다...즉 까다로운 조건을 부여한다
+1.unique 제약조건 
+2.not null 제약조건 
+3.primary key 제약조건 
+4.foreign key 제약조건 
+5.default 제약조건 
+
+위에 명시한 5가지 제약조건을 모두 사용해야 하는건 아니지만,
+반드시~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+사용해야 하는 제약조건이 하나 있다...priamary  key 제약조건
+primary key  =  빈값(null) 을 허용하지 않으면서 + 유일한 값(중복X)
+
+create   table   member2(
+   member2_id   int  primary key  auto_increment
+  , id varchar(20) 
+  , pw varchar(20)
+  , name varchar(30)
+)  default   character  set  utf8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
